@@ -10,6 +10,37 @@
     <link rel="manifest" href="/ytdl/public/manifest.json">
   </head>
   <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">YTDL</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="/">Feed</a>
+            <a class="mdl-navigation__link" href="/help">Help</a>
+            <div class="drawer-option">
+              <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+               impl Notifs later
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">YTDL</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/">Test</a>
+          <a class="mdl-navigation__link" href="/help">Test</a>
+          <div class="drawer-option">
+            <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              impl Notifs later
+            </button>
+          </div>
+        </nav>
+      </div>
     <div class="main-content">
       <h1>Youtube Downloader</h1>
       <form id="form" action="https://bb7b114c.ngrok.io/youtubedownloader" method="POST">
@@ -35,4 +66,5 @@
       </script>
 <!-- end of service worker -->
   </body>
+
 </html>
