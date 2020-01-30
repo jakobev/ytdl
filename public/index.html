@@ -6,6 +6,7 @@
 
     <title>Youtube Downloader</title>
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="canonical" href="https://jakobev.github.io/ytdl/" />
   </head>
   <body>
     <div class="main-content">
@@ -21,15 +22,13 @@
     <script src="./src/js/app.js"></script> 
     <!-- register service worker -->
     <script>
-      if ('serviceWorker' in navigator)
-      {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js')
-        .then(function() { console.log("Service Worker Registered, Cheers to PWA Fire!"); });
+      // register ServiceWorker, remember to use absolute path!
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/{repository}/sw.js', {scope: '/{repository}/'})
       }
-      );
-    }
-    </script>
+      
+      // --- Application code here ---
+      </script>
 <!-- end of service worker -->
   </body>
 </html>

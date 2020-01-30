@@ -1,54 +1,58 @@
-// PWA Fire Bundle
-                      
-        // after a service worker is installed and the user navigates to a different page or 
-        // refreshes,the service worker will begin to receive fetch events
-                          
-        self.addEventListener('fetch', function(event) {
-            event.respondWith(caches.open('cache').then(function(cache) {
-            return cache.match(event.request).then(function(response) {
-            console.log("cache request: " + event.request.url);
-            var fetchPromise = fetch(event.request).then(function(networkResponse) {           
-            // if we got a response from the cache, update the cache                   
-            console.log("fetch completed: " + event.request.url, networkResponse);
-            if (networkResponse) {
-                console.debug("updated cached page: " + event.request.url, networkResponse);
-                  cache.put(event.request, networkResponse.clone());}
-                  return networkResponse;
-                      }, function (event) {   
-            // rejected promise - just ignore it, we're offline!   
-                      console.log("Error in fetch()", event);
-                      event.waitUntil(
-                      caches.open('cache').then(function(cache) { 
-            // our cache is named *cache* in the caches.open() above
-                      return cache.addAll
-                      ([            
-            //cache.addAll(), takes a list of URLs, then fetches them from the server
-            // and adds the response to the cache.           
-            // add your entire site to the cache- as in the code below; for offline access
-            // If you have some build process for your site, perhaps that could 
-            // generate the list of possible URLs that a user might load.               
-                    '/', // do not remove this
-                    './index.html', //default
-                    './index.html?homescreen=1', //default
-                    '/?homescreen=1', //default
-                    './css/style.css',// configure as by your site ; just an example
-                    './images/*',// choose images to keep offline; just an example
-            // Do not replace/delete/edit the manifest.js paths below
-            //These are links to the extenal social media buttons that should be cached;
-            // we have used twitter's as an example
-                  'https://platform.twitter.com/widgets.js',       
-                    ]);
-                    })
-                    );
-                    });
-            // respond from the cache, or the network
-              return response || fetchPromise;
-            });
-            }));
-            });
-            
-            self.addEventListener('install', function(event) {
-              // The promise that skipWaiting() returns can be safely ignored.
-              self.skipWaiting();
-              console.log("Latest version installed!");
-            });
+var APP_PREFIX = 'ApplicationName_'     // Identifier for this app (this needs to be consistent across every cache update)
+var VERSION = 'version_01'              // Version of the off-line cache (change this value everytime you want to update cache)
+var CACHE_NAME = APP_PREFIX + VERSION
+var URLS = [                            // Add URL you want to cache in this list.
+  '/ytdl/',                     // If you have separate JS/CSS files,
+  '/ytdl/index.html'            // add path to those files here
+]
+
+// Respond with cached resources
+self.addEventListener('fetch', function (e) {
+  console.log('fetch request : ' + e.request.url)
+  e.respondWith(
+    caches.match(e.request).then(function (request) {
+      if (request) { // if cache is available, respond with cache
+        console.log('responding with cache : ' + e.request.url)
+        return request
+      } else {       // if there are no cache, try fetching request
+        console.log('file is not cached, fetching : ' + e.request.url)
+        return fetch(e.request)
+      }
+
+      // You can omit if/else for console.log & put one line below like this too.
+      // return request || fetch(e.request)
+    })
+  )
+})
+
+// Cache resources
+self.addEventListener('install', function (e) {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(function (cache) {
+      console.log('installing cache : ' + CACHE_NAME)
+      return cache.addAll(URLS)
+    })
+  )
+})
+
+// Delete outdated caches
+self.addEventListener('activate', function (e) {
+  e.waitUntil(
+    caches.keys().then(function (keyList) {
+      // `keyList` contains all cache names under your username.github.io
+      // filter out ones that has this app prefix to create white list
+      var cacheWhitelist = keyList.filter(function (key) {
+        return key.indexOf(APP_PREFIX)
+      })
+      // add current cache name to white list
+      cacheWhitelist.push(CACHE_NAME)
+
+      return Promise.all(keyList.map(function (key, i) {
+        if (cacheWhitelist.indexOf(key) === -1) {
+          console.log('deleting cache : ' + keyList[i] )
+          return caches.delete(keyList[i])
+        }
+      }))
+    })
+  )
+})
