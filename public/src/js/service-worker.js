@@ -28,11 +28,11 @@
             // If you have some build process for your site, perhaps that could 
             // generate the list of possible URLs that a user might load.               
                     '/', // do not remove this
-                    '/index.html', //default
-                    '/index.html?homescreen=1', //default
+                    './index.html', //default
+                    './index.html?homescreen=1', //default
                     '/?homescreen=1', //default
-                    '/css/style.css',// configure as by your site ; just an example
-                    '/images/*',// choose images to keep offline; just an example
+                    './css/style.css',// configure as by your site ; just an example
+                    './images/*',// choose images to keep offline; just an example
             // Do not replace/delete/edit the manifest.js paths below
             //These are links to the extenal social media buttons that should be cached;
             // we have used twitter's as an example
