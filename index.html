@@ -25,7 +25,9 @@
     <script>
       // register ServiceWorker, remember to use absolute path!
       if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('/ytdl/service-worker.js')
+        navigator.serviceWorker.register('/ytdl/service-worker.js', {scope:'/ytdl/'}).then((reg)=>{
+          console.log("scope is ", reg);
+        })
       }
       
       // --- Application code here ---
