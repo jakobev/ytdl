@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Youtube Downloader</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="canonical" href="https://jakobev.github.io/ytdl/" />
+    <link rel="manifest" href="/ytdl/public/manifest.json">
+  </head>
+  <body>
+    <div class="main-content">
+      <h1>Youtube Downloader</h1>
+      <form id="form" action="https://bb7b114c.ngrok.io/youtubedownloader" method="POST">
+        <input id="url" class="enter-url" type="text" name="url" placeholder="enter Url...">
+        <input class="sub" type="submit" value="Download" onclick="submit();">
+      </form>
+    </div>
+    <div class="bottom-content">
+      <button id="res" class="res" type="button" onclick="resetInput();">Reset Input</button>
+    </div>
+    <script src="./src/js/app.js"></script> 
+    <!-- register service worker -->
+    <script>
+      // register ServiceWorker, remember to use absolute path!
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/ytdl/public/service-worker.js')
+      }
+      
+      // --- Application code here ---
+      </script>
+<!-- end of service worker -->
+  </body>
+</html>
