@@ -2,8 +2,8 @@ var APP_PREFIX = 'ApplicationName_'     // Identifier for this app (this needs t
 var VERSION = 'version_01'              // Version of the off-line cache (change this value everytime you want to update cache)
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [                            // Add URL you want to cache in this list.
-  '/help/index.html',                     // If you have separate JS/CSS files,
-  'ytdl/public/index.html',
+  '/ytdl/public/help/index.html',                     // If you have separate JS/CSS files,
+  '/ytdl/public/index.html',
   '/src/css/style.css',
   '/src/js/app.js',
   '/src/js/material.min.js',
