@@ -4,9 +4,9 @@ var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [                            // Add URL you want to cache in this list.
   '/ytdl/public/help/index.html',                     // If you have separate JS/CSS files,
   '/ytdl/public/index.html',
-  '/src/css/style.css',
-  '/src/js/app.js',
-  '/src/js/material.min.js',
+  '/ytdl/public/src/css/style.css',
+  '/ytdl/public/src/js/app.js',
+  '/ytdl/public/src/js/material.min.js',
 ]
 
 // Respond with cached resources
