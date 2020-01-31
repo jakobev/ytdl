@@ -1,29 +1,28 @@
-var APP_PREFIX = 'ApplicationName_'     // Identifier for this app (this needs to be consistent across every cache update)
-var VERSION = 'version_01'              // Version of the off-line cache (change this value everytime you want to update cache)
+var APP_PREFIX = 'ApplicationName_'     
+var VERSION = 'version_01'           
 var CACHE_NAME = APP_PREFIX + VERSION
-var URLS = [                            // Add URL you want to cache in this list.
-  '/ytdl/public/help/index.html',                     // If you have separate JS/CSS files,
+var URLS = [                        
+  '/ytdl/public/help/index.html',                 
   '/ytdl/public/index.html',
   '/ytdl/public/src/css/style.css',
   '/ytdl/public/src/js/app.js',
   '/ytdl/public/src/js/material.min.js',
 ]
 
-// Respond with cached resources
 self.addEventListener('fetch', function (e) {
   console.log('fetch request : ' + e.request.url)
   e.respondWith(
     caches.match(e.request).then(function (request) {
-      if (request) { // if cache is available, respond with cache
+      if (request) { 
         console.log('responding with cache : ' + e.request.url)
         return request
-      } else {       // if there are no cache, try fetching request
+      } else {      
         console.log('file is not cached, fetching : ' + e.request.url)
         return fetch(e.request)
       }
 
-      // You can omit if/else for console.log & put one line below like this too.
-      // return request || fetch(e.request)
+    
+     
     })
   )
 })
@@ -42,12 +41,12 @@ self.addEventListener('install', function (e) {
 self.addEventListener('activate', function (e) {
   e.waitUntil(
     caches.keys().then(function (keyList) {
-      // `keyList` contains all cache names under your username.github.io
-      // filter out ones that has this app prefix to create white list
+     
+      
       var cacheWhitelist = keyList.filter(function (key) {
         return key.indexOf(APP_PREFIX)
       })
-      // add current cache name to white list
+    
       cacheWhitelist.push(CACHE_NAME)
 
       return Promise.all(keyList.map(function (key, i) {
