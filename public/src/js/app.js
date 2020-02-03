@@ -7,19 +7,19 @@ const form = document.getElementById('form');
 function submit(){
     console.log("fkapeokfgapofkgeapgfkea");
     var i = document.getElementById('url');
-    console.log("input ", i.input);
-    // if(i.value !== '' && i.value){
-    //     form.submit();
-    // }else{
-    //     alert('You have to enter valid youtube url');
-    //     return;
-    // }
+    console.log("input ", i.value);
+    if(i.value !== '' && i.value){
+        form.submit();
+    }else{
+        alert('You have to enter valid youtube url');
+        return;
+    }
 }
 
 function resetInput(){
     console.log("lalalala");
     var i = document.getElementById('url');
-    console.log("input ", i.input);
+    console.log("input ", i.value);
     const input = document.getElementById('url');
     input.value = '';
 }
