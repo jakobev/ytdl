@@ -3,7 +3,7 @@ var VERSION = 'version_01'
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [                        
   '/ytdl/public/help/index.html',                 
-  '/ytdl/public/index.html',
+  '/ytdl/index.html',
   '/ytdl/public/src/css/style.css',
   '/ytdl/public/src/js/app.js',
   '/ytdl/public/src/js/material.min.js',
