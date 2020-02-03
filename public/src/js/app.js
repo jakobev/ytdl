@@ -3,6 +3,7 @@ const axios = require('axios');
 
 const form = document.getElementById('form');
 
+
 function submit(){
     var i = document.getElementById('url');
     console.log("input ", i.input);
