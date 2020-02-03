@@ -8,12 +8,12 @@ function submit(){
     console.log("fkapeokfgapofkgeapgfkea");
     var i = document.getElementById('url');
     console.log("input ", i.input);
-    if(i.value !== '' && i.value){
-        form.submit();
-    }else{
-        alert('You have to enter valid youtube url');
-        return;
-    }
+    // if(i.value !== '' && i.value){
+    //     form.submit();
+    // }else{
+    //     alert('You have to enter valid youtube url');
+    //     return;
+    // }
 }
 
 function resetInput(){
