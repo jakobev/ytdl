@@ -52,6 +52,7 @@ body{
     color: white;
     font-size: 14px;
     font-weight: 500;
+    display: none;
 }
 
 .close-icon {
@@ -67,12 +68,12 @@ body{
 	display: block;
 	width: 15px;
 	height: 15px;
-	position: absolute;
 	background-color: #FA9595;
 	z-index:1;
+	/*position: absolute;
 	right: 35px;
 	top: 0;
-	bottom: 0;
+	bottom: 0;*/
 	margin: auto;
 	padding: 2px;
 	border-radius: 50%;
