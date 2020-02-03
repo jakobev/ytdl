@@ -14,6 +14,14 @@
     <link rel="manifest" href="/ytdl/public/manifest.json">
     <link rel="stylesheet" href="/ytdl/public/src/css/app.css">
   <link rel="stylesheet" href="/ytdl/public/src/css/feed.css">
+
+
+  <link rel="stylesheet" href="/Users/mbittermann/Projects/PWAYoutubeDownloader/public/src/css/app.css">
+  <link rel="manifest" href="/Users/mbittermann/Projects/PWAYoutubeDownloader/public/manifest.json">
+  <link rel="stylesheet" href="/Users/mbittermann/Projects/PWAYoutubeDownloader/public/src/css/feed.css">
+  <link rel="stylesheet" href="/Users/mbittermann/Projects/PWAYoutubeDownloader/public/src/css/style.css">
+
+
   </head>
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -56,7 +64,7 @@
       <form id="form" action="https://6887083c.ngrok.io/youtubedownloader" method="POST">
         <input id="url"  class="search-box" type="search" name="url" placeholder="enter Url...">
         <button class="sub" type="button" onclick="schick();">Download</button>
-        <button class="close-icon" type="reset"></button>
+        <!-- <button class="close-icon" type="reset"></button> -->
       </form>
     </div>
     <div class="bottom-content">
@@ -64,21 +72,30 @@
     </div>
     
     <!-- register service worker -->
-    <!-- <script>
+    <script>
       // register ServiceWorker, remember to use absolute path!
       if (navigator.serviceWorker) {
 
         navigator.serviceWorker.register('/ytdl/service-worker.js', {scope:'/ytdl/'}).then((reg)=>{
           console.log("scope is ", reg);
         })
+
+        navigator.serviceWorker.register('/Users/mbittermann/Projects/PWAYoutubeDownloader/service-worker.js', {scope:'/Users/'}).then((reg)=>{
+          console.log("scope is ", reg);
+        })
       }
        
       // --- Application code here ---
-      </script> -->
+      </script>
 <!-- end of service worker -->
 <script src="/ytdl/public/src/js/app.js"></script> 
     <script defer src="/ytdl/public/src/js/material.min.js"></script>
     <script src="/ytdl/public/src/js/feed.js"></script>
+
+
+    <script src="/Users/mbittermann/Projects/PWAYoutubeDownloader/public/src/js/app.js"></script> 
+    <script defer src="/Users/mbittermann/Projects/PWAYoutubeDownloader/public/src/js/material.min.js"></script>
+    <script src="/Users/mbittermann/Projects/PWAYoutubeDownloader/public/src/js/feed.js"></script>
   </body>
 
 </html>
