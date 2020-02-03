@@ -53,7 +53,7 @@ body{
     color: white;
     font-size: 14px;
     font-weight: 500;
-    display: block;
+    display: none;
 }
 
 .close-icon {
@@ -89,7 +89,8 @@ body{
 	display: none;
 }
 .search-box {
-	width: 80%;
+    height: 30px;
+	width: 70%;
 	border: 1px solid #ccc;
   outline: 0;
   border-radius: 15px;
