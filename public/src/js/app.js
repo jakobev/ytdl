@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const form = document.getElementById('form');
 
-window.onload = function(){
+
 
     
     function schick(){
@@ -25,4 +25,3 @@ window.onload = function(){
         const input = document.getElementById('url');
         input.value = '';
     }
-}
