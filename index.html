@@ -54,8 +54,9 @@
       https://jakobevtube.herokuapp.com/youtubedownloader
       -->
       <form id="form" action="https://6887083c.ngrok.io/youtubedownloader" method="POST">
-        <input id="url" class="enter-url" type="search" name="url" placeholder="enter Url...">
+        <input id="url" required class="search-box" type="search" name="url" placeholder="enter Url...">
         <input class="sub" type="submit" value="Download" onclick="submit();">
+        <button class="close-icon" type="reset"></button>
       </form>
     </div>
     <div class="bottom-content">
