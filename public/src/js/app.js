@@ -5,6 +5,7 @@ const form = document.getElementById('form');
 
 
 function submit(){
+    console.log("fkapeokfgapofkgeapgfkea");
     var i = document.getElementById('url');
     console.log("input ", i.input);
     if(i.value !== '' && i.value){
@@ -16,6 +17,9 @@ function submit(){
 }
 
 function resetInput(){
+    console.log("lalalala");
+    var i = document.getElementById('url');
+    console.log("input ", i.input);
     const input = document.getElementById('url');
     input.value = '';
 }

@@ -52,7 +52,7 @@ body{
     color: white;
     font-size: 14px;
     font-weight: 500;
-    display: none;
+    display: block;
 }
 
 .close-icon {
