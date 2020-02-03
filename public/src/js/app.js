@@ -4,7 +4,7 @@ const axios = require('axios');
 const form = document.getElementById('form');
 
 
-function submit(){
+function schick(){
     console.log("fkapeokfgapofkgeapgfkea");
     var i = document.getElementById('url');
     console.log("input ", i.value);
