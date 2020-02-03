@@ -5,10 +5,11 @@ const form = document.getElementById('form');
 
 function submit(){
     var i = document.getElementById('url');
-    if(i.value !== ''){
+    if(i.value !== '' && i.value){
         form.submit();
     }else{
         alert('You have to enter valid youtube url');
+        return;
     }
 }
 
