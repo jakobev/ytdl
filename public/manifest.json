@@ -38,7 +38,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/ytdl/index.html",
+  "start_url": "/ytdl/maintenance.html",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#fff",

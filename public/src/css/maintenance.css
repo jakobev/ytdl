@@ -1,0 +1,77 @@
+body{
+    display: flex;
+    justify-content: start;
+    /* align-items: center; */
+    align-content: center;
+    background-color: blueviolet;
+    flex-flow: column wrap;
+    overflow-x: hidden
+}
+
+
+.main-content{
+    margin-top: 40px;
+    color: whitesmoke;
+    margin-left: 10px;
+}
+
+.main-content .mail{
+    color: whitesmoke;
+}
+
+.bottom-content{
+    color: whitesmoke;
+    margin-left: 10px;
+}
+
+.bottom-content .neun{
+    font-size: 200px;
+    font-weight: 500;
+    color: whitesmoke;
+}
+
+.header{
+    height: 70px;
+    width: 100%;
+    background-color: rgb(7, 224, 224);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -10px;
+    border-bottom: solid 5px black;
+}
+
+.header .menu-button{
+    width: fit-content;
+    height: 30px;
+    margin-top: 20px;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 6px;
+    border-color: blueviolet;
+    background-color: blueviolet;
+    color: whitesmoke;
+    display: none;
+}
+
+.header .menu-button:focus{
+    width: 140px;
+    height: 400px;
+    background-color: whitesmoke;
+}
+
+.header .heading{
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px){
+    .bottom-content .neun{
+        font-size: 40px;
+    }
+    .header .heading{
+        margin-top: 18px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
