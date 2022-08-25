@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 
-var form = document.getElementById('form');
+
 
 
 
@@ -11,6 +11,7 @@ var form = document.getElementById('form');
         var i = document.getElementById('url');
         console.log("input ", i.value);
         if(i.value !== '' && i.value){
+            var form = document.getElementById('form');
             form.submit();
         }else{
             alert('You have to enter valid youtube url');
