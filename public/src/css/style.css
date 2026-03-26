@@ -1,8 +1,12 @@
 body{
     width: 100%;
-    background: grey;
+    background: rgb(48, 12, 65);
     text-align: center;
     margin: auto;
+}
+
+.title-ytdl {
+    color: rgb(6, 255, 6)
 }
 .main-content {
     text-align: center;
@@ -11,25 +15,28 @@ body{
     margin-top: 15%;
     font-size: 20px;
     font-weight: 500;
+    width: 100%;
 }
 .enter-url{
     margin: 5px;
     border-style: solid;
     border-color: red;
     border-width: 1px;
-    border-radius: 3px;
+    border-radius: 10px, 0, 0,10px;
     font-size: 18px;
     padding-left: 5px;
 }
 .sub {
-    height: 30px;
-    margin: 5px;
+    height: 32px;
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    border-radius: 20px;
-    background-color: blue;
-    color: white;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+    background-color: rgb(44, 3, 53);
+    color: rgb(6, 255, 6);
     font-size: 20px;
     font-weight: 500;
 }
@@ -89,11 +96,15 @@ body{
 	display: none;
 }
 .search-box {
-    height: 30px;
-	width: 70%;
-	border: 1px solid #ccc;
-  outline: 0;
-  border-radius: 15px;
+    height: 32px;
+	width: 40%;
+	border: 1px solid black;
+    outline: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 15px;
+    font-size: 20px;
 }
 .search-box:focus {
 	box-shadow: 0 0 15px 5px #b0e0ee;
