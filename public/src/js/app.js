@@ -1,4 +1,4 @@
-const axios = require('axios');
+//const axios = require('axios');
 
 
 
@@ -28,6 +28,7 @@ const axios = require('axios');
     }
 
 async function checkUrl(url) {
+        console.log("Checking url...");
         var status = document.getElementById("server-status-text")
         try {
             const response = await fetch(url, {method: 'GET'});
@@ -49,6 +50,6 @@ async function checkUrl(url) {
         }
 
     }
-    document.getElementById("check-server-btn").addEventListener("click", function(){
+    document.getElementById("check-server-btn").addEventListener("click", () =>
         checkUrl("https://heaven-serpentiform-olinda.ngrok-free.dev");
-    });
+    );
