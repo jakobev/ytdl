@@ -12,7 +12,7 @@ body{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
+    margin-top: 5%;
     font-size: 20px;
     font-weight: 500;
     width: 100%;
@@ -39,6 +39,11 @@ body{
     color: rgb(6, 255, 6);
     font-size: 20px;
     font-weight: 500;
+}
+
+.sub:hover {
+    background-color: rgb(48, 12, 65);
+    cursor: pointer;
 }
 .bottom-content{
     text-align: center;
@@ -109,4 +114,27 @@ body{
 .search-box:focus {
 	box-shadow: 0 0 15px 5px #b0e0ee;
 	border: 2px solid #bebede;
+}
+
+#form {
+    margin-top: 20vh;
+}
+
+.hint {
+    margin-top: 15vh;
+    font-size: 25px;
+    color: whitesmoke;
+    border: rgb(6, 255, 6), 1px, solid;
+    border-radius: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hint:active span {
+    display: none;
+}
+
+.hint:active::before {
+    content: "Ich hab durchfall!!!"
 }
