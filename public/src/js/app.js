@@ -51,5 +51,4 @@ async function checkUrl(url) {
 
     }
     document.getElementById("check-server-btn").addEventListener("click", () =>
-        checkUrl("https://heaven-serpentiform-olinda.ngrok-free.dev");
-    );
+        checkUrl("https://heaven-serpentiform-olinda.ngrok-free.dev"));
