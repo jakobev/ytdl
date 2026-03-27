@@ -144,3 +144,40 @@ body{
 .hint:active::before {
     content: "Ich hab durchfall!!!"
 }
+
+.check-server-btn {
+    height: 32px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: rgb(44, 3, 53);
+    color: rgb(6, 255, 6);
+    font-size: 20px;
+    font-weight: 500;
+    width: 35%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.check-server-btn:hover {
+    background-color: rgb(6, 255, 6);
+    cursor: pointer;
+    color: rgb(44, 3, 53);
+}
+
+.check-server-btn:active {
+    background-color: rgb(6, 255, 6);
+    color: rgb(44, 3, 53);
+}
+
+#server-status-text {
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 10px;
+}
