@@ -6,13 +6,22 @@
 
 
     
-    function schick(){
+    async function schick(){
         console.log("fkapeokfgapofkgeapgfkea");
         var i = document.getElementById('url');
         console.log("input ", i.value);
         if(i.value !== '' && i.value){
             var form = document.getElementById('form');
-            form.submit();
+            try {
+                const response = await fetch(url, {method: 'GET'});
+            if (response.ok){
+                form.submit();
+            } else {
+                alert('Server status: ' + response.status);
+            }
+        }catch(error) {
+            alert('Server ist Offline.');
+        }
         }else{
             alert('You have to enter valid youtube url');
             return;
