@@ -13,7 +13,7 @@
         if(i.value !== '' && i.value){
             var form = document.getElementById('form');
             try {
-                const response = await fetch(url, {method: 'GET'});
+                const response = await fetch("https://heaven-serpentiform-olinda.ngrok-free.dev", {method: 'GET'});
             if (response.ok){
                 form.submit();
             } else {
